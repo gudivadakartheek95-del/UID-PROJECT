@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJIO - Online Shopping</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <h1>AJIO</h1>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#categories">Women</a></li>
+      <li><a href="#categories">Men</a></li>
+      <li><a href="#categories">Kids</a></li>
+      <li><a href="#products">New Arrivals</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+
+    <div class="nav-icons">
+      <span class="icon" title="Search">&#128269;</span>
+      <span class="icon" title="Wishlist">&#10084;</span>
+      <span class="icon cart-icon" id="cartIcon" title="Cart">
+        &#128722;
+        <span class="cart-count" id="cartCount">0</span>
+      </span>
+    </div>
+  </nav>
+
+  
+  <section class="hero" id="home">
+    <div class="hero-slider" id="heroSlider">
+
+      <div class="slide slide1">
+        <div class="slide-content">
+          <p class="slide-tag">New Season Sale</p>
+          <h2>Up to <span>60% Off</span></h2>
+          <p class="slide-sub">On top brands &amp; trending styles</p>
+          <a href="#products" class="btn-primary">Shop Now</a>
+        </div>
+      </div>
+
+      <div class="slide slide2">
+        <div class="slide-content">
+          <p class="slide-tag">Summer Collection</p>
+          <h2>Fresh <span>Arrivals</span></h2>
+          <p class="slide-sub">Explore the latest summer trends</p>
+          <a href="#products" class="btn-primary">Explore</a>
+        </div>
+      </div>
+
+      <div class="slide slide3">
+        <div class="slide-content">
+          <p class="slide-tag">Premium Picks</p>
+          <h2>Style <span>Redefined</span></h2>
+          <p class="slide-sub">Curated fashion for every occasion</p>
+          <a href="#products" class="btn-primary">View All</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="slider-dots">
+      <span class="dot active-dot" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+  </section>
+
+  
+  <div class="offer-strip">
+    <p>&#128722; FREE SHIPPING on orders above ₹499 &nbsp;|&nbsp; &#127381; NEW ARRIVALS EVERY WEEK &nbsp;|&nbsp; &#9889; USE CODE <strong>AJIO20</strong> FOR 20% OFF &nbsp;|&nbsp; &#128722; EASY RETURNS &amp; EXCHANGES</p>
+  </div>
+
+  <!-- ===== CATEGORIES SECTION ===== -->
+  <section class="categories" id="categories">
+    <h2 class="section-title">Shop By Category</h2>
+    <p class="section-sub">Find the perfect style for every occasion</p>
+
+    <div class="cat-grid">
+
+      <div class="cat-card" onclick="filterProducts('women')">
+        <div class="cat-img">
+          <img src="women.jpeg" alt="Women" />
+        </div>
+        <p>Women</p>
+      </div>
+
+      <div class="cat-card" onclick="filterProducts('men')">
+        <div class="cat-img">
+          <img src="men.jpeg" alt="Men" />
+        </div>
+        <p>Men</p>
+      </div>
+
+      <div class="cat-card" onclick="filterProducts('kids')">
+        <div class="cat-img">
+          <img src="kid.jpeg" alt="Kids" />
+        </div>
+        <p>Kids</p>
+      </div>
+
+      <div class="cat-card" onclick="filterProducts('accessories')">
+        <div class="cat-img">
+          <img src="accesiories.jpg" alt="Accessories" />
+        </div>
+        <p>Accessories</p>
+      </div>
+
+      <div class="cat-card" onclick="filterProducts('footwear')">
+        <div class="cat-img">
+          <img src="footwear.jpeg" alt="Footwear" />
+        </div>
+        <p>Footwear</p>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <section class="products" id="products">
+    <h2 class="section-title">Trending Now</h2>
+    <p class="section-sub">Handpicked styles just for you</p>
+
+    <div class="filter-btns">
+      <button class="filter-btn active-filter" onclick="filterProducts('all')">All</button>
+      <button class="filter-btn" onclick="filterProducts('women')">Women</button>
+      <button class="filter-btn" onclick="filterProducts('men')">Men</button>
+      <button class="filter-btn" onclick="filterProducts('kids')">Kids</button>
+      <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+
+      <div class="product-card" data-cat="women">
+        <div class="prod-img">
+          <img src="floral.jpg" alt="Floral Wrap Dress" />
+          <span class="badge">-40%</span>
+          <div class="prod-overlay">
+            <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+          </div>0
+        </div>
+        <div class="prod-info">
+          <h4>Floral Wrap Dress</h4>
+          <p class="brand">Zara</p>
+          <p class="price">₹1,199 <del>₹1,999</del></p>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="men">
+        <div class="prod-img">
+          <img src="chenos.avif" alt="Slim Fit Chinos" />
+          <span class="badge">-30%</span>
+          <div class="prod-overlay">
+            <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="prod-info">
+          <h4>Slim Fit Chinos</h4>
+          <p class="brand">H&amp;M</p>
+          <p class="price">₹999 <del>₹1,499</del></p>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="women">
+        <div class="prod-img">
+          <img src="kurta.jpeg" alt="Ethnic Kurta Set" />
+          <span class="badge new-badge">New</span>
+          <div class="prod-overlay">
+            <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="prod-info">
+          <h4>Ethnic Kurta Set</h4>
+          <p class="brand">Biba</p>
+          <p class="price">₹1,499 <del>₹2,200</del></p>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="men">
+        <div class="prod-img">
+          <img src="tshirt.jpeg" alt="Graphic Oversized Tee" />
+          <div class="prod-overlay">
+            <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="prod-info">
+          <h4>Graphic Oversized Tee</h4>
+          <p class="brand">Dennis Lingo</p>
+          <p class="price">₹699 <del>₹1,100</del></p>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="kids">
+        <div class="prod-img">
+          <img src="dungaress.jpg" alt="Printed Dungaree" />
+          <span class="badge">-25%</span>
+          <div class="prod-overlay">
+            <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="prod-info">
+          <h4>Printed Dungaree</h4>
+          <p class="brand">FS Mini Klub</p>
+          <p class="price">₹549 <del>₹749</del></p>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="accessories">
+        <div class="prod-img">
+          <img src="bag.jpeg" alt="Crossbody Bag" />
+          <span class="badge new-badge">New</span>
+          <div class="prod-overlay">
+            <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="prod-info">
+          <h4>Crossbody Bag</h4>
+          <p class="brand">Lavie</p>
+          <p class="price">₹1,299 <del>₹2,000</del></p>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="footwear">
+        <div class="prod-img">
+          <img src="heels.webp" alt="Block Heel Sandals" />
+          <span class="badge">-35%</span>
+          <div class="prod-overlay">
+            <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="prod-info">
+          <h4>Block Heel Sandals</h4>
+          <p class="brand">Metro</p>
+          <p class="price">₹899 <del>₹1,399</del></p>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="men">
+        <div class="prod-img">
+          <img src="blazzer.jpeg" alt="Formal Blazer" />
+          <div class="prod-overlay">
+            <button class="btn-cart" onclick="addToCart(this)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="prod-info">
+          <h4>Formal Blazer</h4>
+          <p class="brand">Raymond</p>
+          <p class="price">₹2,499 <del>₹3,999</del></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <section class="about" id="about">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Why Shop with <span>AJIO</span>?</h2>
+        <p>We bring you the best in fashion from top brands across India and the world. From daily wear to party essentials, we have it all.</p>
+        <ul class="about-list">
+          <li>&#9989; 1000+ Premium Brands</li>
+          <li>&#9989; 10 Lakh+ Happy Customers</li>
+          <li>&#9989; Easy 30-Day Returns</li>
+          <li>&#9989; Secure Payments</li>
+        </ul>
+        <a href="#products" class="btn-primary">Start Shopping</a>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <h3>10L+</h3>
+          <p>Customers</p>
+        </div>
+        <div class="stat-box">
+          <h3>1000+</h3>
+          <p>Brands</p>
+        </div>
+        <div class="stat-box">
+          <h3>50K+</h3>
+          <p>Products</p>
+        </div>
+        <div class="stat-box">
+          <h3>4.8&#9733;</h3>
+          <p>Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="newsletter">
+    <h2>Stay in Style</h2>
+    <p>Subscribe to get the latest deals, trends &amp; new arrivals</p>
+    <form class="news-form" onsubmit="subscribeNews(event)">
+      <input type="email" id="newsEmail" placeholder="Enter your email" required />
+      <button type="submit" class="btn-primary">Subscribe</button>
+    </form>
+    <p id="newsMsg" class="news-msg"></p>
+  </section>
+
+  
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>AJIO</h3>
+        <p>Your one-stop fashion destination for the latest trends, top brands, and exclusive deals.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#products">New Arrivals</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Returns &amp; Exchanges</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>&#128231; support@ajio.in</p>
+        <p>&#128222; 1800-123-4567</p>
+        <p>&#128205; Mumbai, India</p>
+      </div>
+    </div>
+    <hr />
+    <p class="footer-copy">&copy; 2025 AJIO. All rights reserved. | Made with &#10084; in India</p>
+  </footer>
+
+  
+  <div class="toast" id="toast">Item added to cart! &#128722;</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
